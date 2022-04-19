@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.jiguang.mapper.BookMapper">
+    <select id="listAllBooks" resultType="com.jiguang.entity.book.BookInfo">
+        select *
+        from library_book_info
+    </select>
+    <select id="getOneBook" resultType="com.jiguang.entity.book.BookInfo">
+        select *
+        from library_book_info
+        where book_num = #{bookNum}
+    </select>
+    
+    <update id="updateBookQuantity" parameterType="com.jiguang.entity.messageQueue.BookOperationObeject">
+        update library_book_info
+        set
+        <if test="operationType == 0">
+            book_quantity = book_quantity - 1
+        </if>
+        <if test="operationType == 1">
+            book_quantity = book_quantity + 1
+        </if>
+        where book_num = #{bookNum}
+    </update>
+</mapper>

@@ -1,0 +1,8 @@
+com/jiguang/service/BookConsumerService.class
+com/jiguang/componant/impl/MQServiceImpl.class
+com/jiguang/entity/book/BookInfo.class
+com/jiguang/BookConsumerServer.class
+com/jiguang/mapper/BookMapper.class
+com/jiguang/service/impl/BookConsumerServiceImpl.class
+com/jiguang/componant/MQService.class
+com/jiguang/entity/messageQueue/BookOperationObeject.class
